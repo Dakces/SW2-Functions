@@ -1,16 +1,14 @@
 const functions = require("firebase-functions");
-const admin = require("firebase-admin");
+//const admin = require("firebase-admin");
 const firebase = require("firebase");
 const express = require("express");
 const app = express();
 const firebaseConfig = require("./utils/firebaseConfig.json");
 
-// admin.initializeApp({
-//   credential: admin.credential.cert(firebaseConfig),
-//   databaseURL: "https://ul-sw2-analytics.firebaseio.com"
-// });
-admin.initializeApp();
-firebase.initializeApp(firebaseConfig);
+const cors = require("cors");
+app.use(cors());
+
+const { db } = require("./db/admin");
 
 //Routes
 const houseRoutes = require("./routes/house.routes");

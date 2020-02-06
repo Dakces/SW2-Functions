@@ -4,6 +4,6 @@ const house = require("../controllers/house.controller");
 
 //Get all Houses
 router.get("/", house.getAllHouses);
-
+router.get("/:houseId", house.getHouse);
 
 module.exports = router;
