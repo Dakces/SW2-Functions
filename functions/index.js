@@ -12,10 +12,12 @@ const { db } = require("./db/admin");
 
 //Routes
 const houseRoutes = require("./routes/house.routes");
+const roomRoutes = require("./routes/room.routes");
 //const userRoutes = require("./routes/user.routes");
 
 //API Routes Definition
 app.use("/houses", houseRoutes);
+app.use("/rooms", roomRoutes);
 //app.use("/users", userRoutes);
 
 exports.api = functions.https.onRequest(app);
